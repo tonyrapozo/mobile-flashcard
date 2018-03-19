@@ -5,12 +5,17 @@ import Home from './screens/home'
 import NewDeck from './screens/newdeck'
 import Deck from './screens/deck'
 
-import { StackNavigator } from 'react-navigation';
+import { DrawerNavigator, TabNavigator, StackNavigator  } from 'react-navigation';
 
-const App = StackNavigator({
+const AppNavigator = TabNavigator ({
     Home: { screen: Home },
-    NewDeck: { screen: NewDeck },
-    Deck: { screen: Deck },
+    NewDeck: { screen: NewDeck }
 });
 
-export default App;
+export default class App extends React.Component {
+    render() {
+      return (
+        <AppNavigator />
+      );
+    }
+  }
